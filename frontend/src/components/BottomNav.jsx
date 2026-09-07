@@ -17,7 +17,7 @@ const BottomNav = () => {
 
     const endpoint = isPartner ? '/api/auth/food-partner/logout' : '/api/auth/user/logout'
     try {
-      await axios.get(`http://localhost:3000${endpoint}`, { withCredentials: true })
+      await axios.get(`https://cravio-btre.onrender.com${endpoint}`, { withCredentials: true })
     } finally {
       localStorage.removeItem('foodview-role')
       navigate('/user/login')

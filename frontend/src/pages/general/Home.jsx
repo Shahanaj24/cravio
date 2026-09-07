@@ -11,7 +11,7 @@ const Home = () => {
     // Autoplay behavior is handled inside ReelFeed
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/food", { withCredentials: true })
+        axios.get("https://cravio-btre.onrender.com/api/food", { withCredentials: true })
             .then(response => {
 
                 console.log(response.data);
@@ -39,7 +39,7 @@ const Home = () => {
 
         const liked = !item.isLiked
         try {
-            await axios.post("http://localhost:3000/api/food/like", { foodId: item._id }, {withCredentials: true})
+            await axios.post("https://cravio-btre.onrender.com/api/food/like", { foodId: item._id }, {withCredentials: true})
         } catch (error) {
             console.log("Like API unavailable; saved like locally", error)
         }
@@ -58,7 +58,7 @@ const Home = () => {
 
         const saved = !item.isSaved
         try {
-            await axios.post("http://localhost:3000/api/food/save", { foodId: item._id }, { withCredentials: true })
+            await axios.post("https://cravio-btre.onrender.com/api/food/save", { foodId: item._id }, { withCredentials: true })
         } catch (error) {
             console.log("Save API unavailable; saved state locally", error)
         }
@@ -79,7 +79,7 @@ const Home = () => {
                 markAsAdded()
                 return
             }
-            await axios.post("http://localhost:3000/api/cart/add", { foodId: item._id, quantity: 1 }, { withCredentials: true })
+            await axios.post("https://cravio-btre.onrender.com/api/cart/add", { foodId: item._id, quantity: 1 }, { withCredentials: true })
             markAsAdded()
         } catch (err) {
             markAsAdded()

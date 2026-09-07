@@ -13,7 +13,7 @@ const Checkout = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/cart", { withCredentials: true })
+        axios.get("https://cravio-btre.onrender.com/api/cart", { withCredentials: true })
             .then((response) => setCart(response.data.cart))
             .finally(() => setLoading(false))
     }, [])
@@ -29,7 +29,7 @@ const Checkout = () => {
 
         setPlacingOrder(true)
         try {
-            await axios.post("http://localhost:3000/api/orders", { deliveryAddress }, { withCredentials: true })
+            await axios.post("https://cravio-btre.onrender.com/api/orders", { deliveryAddress }, { withCredentials: true })
             navigate('/orders')
         } catch (err) {
             setError(err?.response?.data?.message || 'Could not place order. Please try again.')

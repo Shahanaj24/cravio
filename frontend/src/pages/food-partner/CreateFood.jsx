@@ -64,7 +64,7 @@ const CreateFood = () => {
         formData.append("mama", videoFile);
 
         try {
-            const response = await axios.post("http://localhost:3000/api/food", formData, {
+            const response = await axios.post("https://cravio-btre.onrender.com/api/food", formData, {
                 withCredentials: true,
             })
 

@@ -8,7 +8,7 @@ const MyOrders = () => {
     const [ loading, setLoading ] = useState(true)
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/orders/my-orders", { withCredentials: true })
+        axios.get("https://cravio-btre.onrender.com/api/orders/my-orders", { withCredentials: true })
             .then((response) => setOrders(response.data.orders))
             .finally(() => setLoading(false))
     }, [])

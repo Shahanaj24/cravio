@@ -19,7 +19,7 @@ const PartnerOrders = () => {
 
     const loadOrders = () => {
         setLoading(true)
-        axios.get("http://localhost:3000/api/orders/partner", { withCredentials: true })
+        axios.get("https://cravio-btre.onrender.com/api/orders/partner", { withCredentials: true })
             .then((response) => setOrders(response.data.orders))
             .finally(() => setLoading(false))
     }
@@ -32,7 +32,7 @@ const PartnerOrders = () => {
         setUpdatingId(orderId)
         try {
             const response = await axios.patch(
-                `http://localhost:3000/api/orders/${orderId}/status`,
+                `https://cravio-btre.onrender.com/api/orders/${orderId}/status`,
                 { orderStatus },
                 { withCredentials: true }
             )

@@ -12,7 +12,7 @@ const Cart = () => {
 
     const loadCart = () => {
         setLoading(true)
-        axios.get("http://localhost:3000/api/cart", { withCredentials: true })
+        axios.get("https://cravio-btre.onrender.com/api/cart", { withCredentials: true })
             .then((response) => {
                 const apiCart = response.data.cart
                 const localItems = getLocalCart().map((item) => ({
@@ -49,7 +49,7 @@ const Cart = () => {
             setCart({ items, totalAmount: items.reduce((total, item) => total + item.subtotal, 0) })
             return
         }
-        const response = await axios.patch(`http://localhost:3000/api/cart/${foodId}`, { action }, { withCredentials: true })
+        const response = await axios.patch(`https://cravio-btre.onrender.com/api/cart/${foodId}`, { action }, { withCredentials: true })
         setCart(response.data.cart)
     }
 
@@ -63,7 +63,7 @@ const Cart = () => {
             setCart({ items, totalAmount: items.reduce((total, item) => total + item.subtotal, 0) })
             return
         }
-        const response = await axios.delete(`http://localhost:3000/api/cart/${foodId}`, { withCredentials: true })
+        const response = await axios.delete(`https://cravio-btre.onrender.com/api/cart/${foodId}`, { withCredentials: true })
         setCart(response.data.cart)
     }
 

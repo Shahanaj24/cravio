@@ -11,7 +11,7 @@ const MyFood = () => {
     const [deletingId, setDeletingId] = useState(null)
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/food-partner/me/foods', { withCredentials: true })
+        axios.get('https://cravio-btre.onrender.com/api/food-partner/me/foods', { withCredentials: true })
             .then((response) => setFoodItems(response.data.foodItems || []))
             .catch((requestError) => setError(requestError?.response?.data?.message || 'Could not load your food videos.'))
             .finally(() => setLoading(false))
@@ -21,7 +21,7 @@ const MyFood = () => {
         setDeletingId(foodId)
         setError('')
         try {
-            await axios.delete(`http://localhost:3000/api/food-partner/me/foods/${foodId}`, { withCredentials: true })
+            await axios.delete(`https://cravio-btre.onrender.com/api/food-partner/me/foods/${foodId}`, { withCredentials: true })
             setFoodItems((previousItems) => previousItems.filter((food) => food._id !== foodId))
         } catch (requestError) {
             const message = requestError?.response?.status === 401
