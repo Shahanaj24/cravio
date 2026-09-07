@@ -1,0 +1,215 @@
+@import './theme.css';
+
+.order-page {
+  min-height: 100dvh;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) calc(var(--space-8) + 72px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.order-page-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.order-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Cart / order line item */
+.line-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.line-item-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: var(--color-surface-alt);
+  flex-shrink: 0;
+}
+
+.line-item-info {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.line-item-name {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-item-price {
+  color: var(--color-text-secondary);
+  font-size: .85rem;
+}
+
+.line-item-subtotal {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.qty-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+}
+
+.qty-btn:hover { background: var(--color-border); }
+
+.qty-value {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.remove-link {
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  font-size: .8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.order-divider {
+  height: 1px;
+  border: none;
+  background: var(--color-border);
+}
+
+.order-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.order-sub-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text-secondary);
+  font-size: .9rem;
+}
+
+.field-group textarea#deliveryAddress {
+  width: 100%;
+}
+
+/* Order history cards */
+.order-summary-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.order-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.order-summary-id {
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+.order-summary-date {
+  font-size: .8rem;
+  color: var(--color-text-secondary);
+}
+
+.order-summary-items {
+  color: var(--color-text-secondary);
+  font-size: .9rem;
+  display: grid;
+  gap: 2px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  width: fit-content;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+}
+
+.status-pill.status-PLACED { color: var(--color-accent); }
+.status-pill.status-CONFIRMED { color: var(--color-accent); }
+.status-pill.status-PREPARING { color: #b45309; }
+.status-pill.status-READY { color: #0f766e; }
+.status-pill.status-DELIVERED { color: #15803d; }
+.status-pill.status-CANCELLED { color: var(--color-danger); }
+
+.status-pill.pay-PENDING { color: #b45309; }
+.status-pill.pay-PAID { color: #15803d; }
+.status-pill.pay-FAILED { color: var(--color-danger); }
+
+.order-status-row {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.empty-hint {
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+}
+
+.status-select {
+  appearance: none;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font: inherit;
+}
